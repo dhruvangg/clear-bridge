@@ -7,6 +7,7 @@ import axios from 'axios';
 import { Client } from "@hubspot/api-client";
 import { Readable } from "stream";
 import dotenv from 'dotenv';
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -30,7 +31,15 @@ function bufferToStream(buffer) {
 const hubspot = new Client({ accessToken: process.env.HUBSPOT_ACCESS_TOKEN });
 
 async function generatePDF(html, filename) {
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+        headless: true,
+        args: [
+            "--no-sandbox",
+            "--disable-setuid-sandbox",
+            "--disable-dev-shm-usage",
+            "--disable-gpu",
+        ],
+    });
     const page = await browser.newPage();
     await page.setContent(html, { waitUntil: "networkidle0" });
     const pdfBuffer = await page.pdf({
@@ -150,8 +159,8 @@ app.get('/health-history-pdf', async (req, res) => {
     }
     try {
         const html = generateHTML("./html/health-history-questionnaire.html", client);
-        await generatePDF(html, `health-history-questionnaire`);
-        res.status(200).json({ message: 'PDF generated successfully' });
+        const data = await generatePDF(html, `health-history-questionnaire`);
+        res.status(200).json({ message: 'PDF generated successfully', data: data });
     } catch (error) {
         console.error("Error generating PDF:", error);
         res.status(500).json({ message: 'Error generating PDF', error: error.message });
