@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Personal Information Form</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="font-sans text-gray-700">
+  <div class="max-w-4xl mx-auto py-8 px-4">
+    <div class="p-8 mb-8 border border-gray-300 rounded grid grid-cols-3 gap-4 items-center">
+      <div class="col-span-1  text-center md:text-left">
+        <img src="https://48724797.hs-sites.com/hs-fs/hubfs/CBH-PNG-web.png" alt="Company Logo"
+          class="mx-auto md:mx-0 w-48">
+      </div>
+      <div class="col-span-2 text-center md:text-right text-gray-600">
+        <h1 class="text-3xl font-bold mb-2">Client Registration Application</h1>
+      </div>
+    </div>
+    <form class="space-y-6">
+      <!-- Client Personal Information Section -->
+      <div class="bg-white border border-gray-300 rounded">
+        <div class="bg-[#0080cb] text-white px-6 py-3 font-bold text-lg">
+          Client Personal Information | 客户个人信息
+        </div>
+
+        <div class="p-6 space-y-6">
+          <!-- Name Fields -->
+          <div class="grid grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-2">
+                Name | 英文名字
+              </label>
+              <div class="grid grid-cols-2 gap-2">
+                <p class="px-3 py-2 border border-gray-300 rounded">{{ surname }}</p>
+                <p class="px-3 py-2 border border-gray-300 rounded">{{ givename }}</p>
+              </div>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-2">
+                Chinese Name | 中文名字
+              </label>
+              <p class="w-full px-3 py-2 border border-gray-300 rounded">{{chinesename}}</p>
+            </div>
+          </div>
+
+          <!-- Date of Birth & ID -->
+          <div class="grid grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-2">
+                Date of Birth | 出生日期
+              </label>
+              <p class="w-full px-3 py-2 border border-gray-300 rounded">{{dateofbirth}}</p>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-2">
+                ID/Passport No. | 身份证/护照号
+              </label>
+              <p class="w-full px-3 py-2 border border-gray-300 rounded">{{passportnumber}}</p>
+            </div>
+          </div>
+
+          <!-- Nationality & Phone -->
+          <div class="grid grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-2">
+                Nationality | 国籍
+              </label>
+              <p class="w-full px-3 py-2 border border-gray-300 rounded">{{ nationality }}</p>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-2">
+                Home Tel. No. | 家里电话号
+              </label>
+              <p class="w-full px-3 py-2 border border-gray-300 rounded">{{hometelephone}}</p>
+            </div>
+          </div>
+
+          <!-- Education Level -->
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-2">
+              Education Level | 教育程度
+            </label>
+            <p class="w-full px-3 py-2 border border-gray-300 rounded">{{educationlevel}}</p>
+          </div>
+
+          <!-- Occupation & Immune History -->
+          <div class="grid grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-2">
+                Occupation | 职业
+              </label>
+              <p class="w-full px-3 py-2 border border-gray-300 rounded">{{occupation}}</p>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-2">
+                Have you received any immune cells vaccine in the past? | 是否曾接种过免疫细胞
+              </label>
+              <p class="w-full px-3 py-2 border border-gray-300 rounded">{{isImmunCellStored}} {{#if locationofstorage}}
+                &#40; {{locationofstorage}} &#41; {{/if}}</p>
+            </div>
+          </div>
+
+          <!-- Mobile Phone -->
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-2">
+              Mobile Phone No. | 手机号码
+            </label>
+            <p class="w-full px-3 py-2 border border-gray-300 rounded">{{mobilephone}}</p>
+          </div>
+
+          <!-- Residential Address -->
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-2">
+              Residential Address | 居住地址
+            </label>
+            <textarea class="w-full px-3 py-2 border border-gray-300 rounded">{{residentialaddress}}</textarea>
+          </div>
+
+          <!-- Correspondence Address -->
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-2">
+              Correspondence Address (If different from Residential Address) | 通讯地址
+            </label>
+            <textarea class="w-full px-3 py-2 border border-gray-300 rounded">{{correspondenceaddress}}</textarea>
+          </div>
+
+          <!-- Email & WhatsApp -->
+          <div class="grid grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-2">
+                Email Address | 电子邮件
+              </label>
+              <p class="w-full px-3 py-2 border border-gray-300 rounded">{{ emailaddress }}</p>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-2">
+                WhatsApp | 微信/WhatsApp
+              </label>
+              <p class="w-full px-3 py-2 border border-gray-300 rounded">{{ whatsappnumber }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Emergency Contact Section -->
+      <div class="bg-white border border-gray-300 rounded">
+        <div class="bg-[#0080cb] text-white px-6 py-3 font-bold text-lg">
+          Emergency Contact | 紧急联系人
+        </div>
+
+        <div class="p-6 space-y-6">
+          <!-- Emergency Contact Name -->
+          <div class="grid grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-2">
+                English Name | 英文名字
+              </label>
+              <div class="grid grid-cols-2 gap-2">
+                <p class="px-3 py-2 border border-gray-300 rounded">{{emergencycontactsurname}}</p>
+                <p class="px-3 py-2 border border-gray-300 rounded">{{emergencycontactgivenname}}</p>
+              </div>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-2">
+                Chinese Name | 中文名字
+              </label>
+              <p class="px-3 py-2 border border-gray-300 rounded">{{emergencycontactchinesename}}</p>
+            </div>
+          </div>
+
+          <!-- Contact Phone Numbers -->
+          <div class="grid grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-2">
+                Home Tel. No. | 家里电话号
+              </label>
+              <p class="px-3 py-2 border border-gray-300 rounded">{{emergencycontacttelephone}}</p>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-2">
+                Mobile Phone No. | 手机号码
+              </label>
+              <p class="px-3 py-2 border border-gray-300 rounded">{{emergencycontactmobilephone}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Physician & Hospital Section -->
+      <div class="bg-white border border-gray-300 rounded">
+        <div class="bg-[#0080cb] text-white px-6 py-3 font-bold text-lg">
+          Details of Physician & Hospital/Clinic | 医生及医院/诊所信息
+        </div>
+
+        <div class="p-6 space-y-6">
+          <!-- Physician Name -->
+          <div class="grid grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-2">
+                English Name | 英文名字
+              </label>
+              <div class="grid grid-cols-2 gap-2">
+                <p class="px-3 py-2 border border-gray-300 rounded">{{physiciansurname}}</p>
+                <p class="px-3 py-2 border border-gray-300 rounded">{{physiciangivenname}}</p>
+              </div>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-2">
+                Chinese Name | 中文名字
+              </label>
+              <p class="px-3 py-2 border border-gray-300 rounded">{{physicianchinesename}}</p>
+            </div>
+          </div>
+
+          <!-- Hospital/Clinic -->
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-2">
+              Hospital/Clinic | 医院/诊所
+            </label>
+            <p class="px-3 py-2 border border-gray-300 rounded">{{physicianclinicname}}</p>
+          </div>
+
+          <!-- Medical Details -->
+          <div class="grid grid-cols-3 gap-6">
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-2">
+                Blood Collection Time | 采血时间
+              </label>
+              <div class="space-y-2 text-sm">
+                <div>
+                  <label class="block text-gray-600">Start at | 开始时间</label>
+                  <p class="w-full px-3 py-2 border border-gray-300 rounded">{{bloodcollectionstarttime}}</p>
+                </div>
+                <div>
+                  <label class="block text-gray-600">End at | 结束时间</label>
+                  <p class="w-full px-3 py-2 border border-gray-300 rounded">{{bloodcollectionendtime}}</p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-2">
+                Blood Pressure | 血压
+              </label>
+              <div class="space-y-2 text-sm">
+                <div>
+                  <label class="block text-gray-600">Before | 前</label>
+                  <p class="w-full px-3 py-2 border border-gray-300 rounded">{{ bloodpressurebeforecollection }}</p>
+                </div>
+                <div>
+                  <label class="block text-gray-600">After | 后</label>
+                  <p class="w-full px-3 py-2 border border-gray-300 rounded">{{ bloodpressureaftercollection }}</p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-2">
+                Temperature | 体温
+              </label>
+              <p class="w-full px-3 py-2 border border-gray-300 rounded">{{ temperature }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white border border-gray-300 rounded">
+        <div class="bg-[#0080cb] text-white px-6 py-3 font-bold text-lg">
+          Storage Plan and Fee | 储存计划和费用
+        </div>
+
+        <div class="p-6 space-y-6">
+          <label class="block text-sm font-semibold text-gray-700 mb-2">
+            Selected Plan: | 请选择下一个
+          </label>
+          <p class="px-3 py-2 border border-gray-300 rounded">{{storageplan}}</p>
+          <!-- <p class="text-sm text-gray-600 mb-4">
+            Please select one of the following plans: | 请选择下一个 Please select one of the following plans:
+          </p> -->
+
+          <!-- Storage Plans Table -->
+          <div class="overflow-x-auto">
+            <table class="w-full border border-gray-300">
+              <thead>
+                <tr class="bg-gray-100 border-b border-gray-300">
+                  <!-- <th class="border border-gray-300 px-4 py-2 text-left font-semibold text-sm">Please ✓</th> -->
+                  <th class="border border-gray-300 px-4 py-2 text-left font-semibold text-sm">Package Code</th>
+                  <th class="border border-gray-300 px-4 py-2 text-left font-semibold text-sm">Package Name</th>
+                  <th class="border border-gray-300 px-4 py-2 text-left font-semibold text-sm">Description</th>
+                  <th class="border border-gray-300 px-4 py-2 text-left font-semibold text-sm">Price*</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Horizon 10 -->
+                <tr class="border-b border-gray-300">
+                  <!-- <td class="border border-gray-300 px-4 py-3 font-bold text-green-600">
+                    ✓ 
+                  </td> -->
+                  <td class="border border-gray-300 px-4 py-3 text-sm">Horizon 10</td>
+                  <td class="border border-gray-300 px-4 py-3 text-sm">Immune Cell 10-Year Storage Plan</td>
+                  <td class="border border-gray-300 px-4 py-3 text-sm">Whole blood will be collected and PBMCs (white
+                    blood cells) isolated, then stored at -190°C in a liquid nitrogen tank for up to 10 years.</td>
+                  <td class="border border-gray-300 px-4 py-3 text-sm font-semibold">HK$50,000</td>
+                </tr>
+                <!-- Blueprint 5 -->
+                <tr class="border-b border-gray-300">
+                  <td class="border border-gray-300 px-4 py-3 text-sm">Blueprint 5</td>
+                  <td class="border border-gray-300 px-4 py-3 text-sm">Immune Cell 5-Year Storage Plan</td>
+                  <td class="border border-gray-300 px-4 py-3 text-sm">Whole blood will be collected and PBMCs (white
+                    blood cells) isolated, then stored at -190°C in a liquid nitrogen tank for up to 5 years.</td>
+                  <td class="border border-gray-300 px-4 py-3 text-sm font-semibold">HK$39,000</td>
+                </tr>
+                <!-- Catalyst 1 -->
+                <tr class="border-b border-gray-300">
+                  <td class="border border-gray-300 px-4 py-3 text-sm">Catalyst 1</td>
+                  <td class="border border-gray-300 px-4 py-3 text-sm">Immune Cell Annual Storage Plan</td>
+                  <td class="border border-gray-300 px-4 py-3 text-sm">Whole blood will be collected and PBMCs (white
+                    blood cells) isolated, then stored at -190°C in a liquid nitrogen tank for up to 1 year.</td>
+                  <td class="border border-gray-300 px-4 py-3 text-sm font-semibold">HK$28,000</td>
+                </tr>
+                <!-- Renewal -->
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 text-sm">Renewal</td>
+                  <td class="border border-gray-300 px-4 py-3 text-sm">Immune Cell Annual Renewal Plan</td>
+                  <td class="border border-gray-300 px-4 py-3 text-sm">Extend expired storage agreement for another 1
+                    year.</td>
+                  <td class="border border-gray-300 px-4 py-3 text-sm font-semibold">HK$3,000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Remarks -->
+          <div class="mt-4 text-xs text-gray-600 space-y-1 bg-gray-50 p-3 rounded">
+            <p><strong>Remarks:</strong></p>
+            <ul class="list-disc list-inside space-y-1">
+              <li>All prices above include application fee, blood collection, processing and testing fee and storage
+                fee.</li>
+              <li>Application fee: HK$1,000 (non-refundable)</li>
+              <li>Blood collection, processing and testing fee: HK$27,000 (non-refundable)</li>
+              <li>储存费: HK价格不包含在上述价格中,实际施行。</li>
+              <li>本表、协议及包装、谢谢27,000元(不出血证)。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Payment Plan Section -->
+      <div class="bg-white border border-gray-300 rounded">
+        <div class="bg-[#0080cb] text-white px-6 py-3 font-bold text-lg">
+          Payment Plan | 付款计划
+        </div>
+
+        <div class="p-6 space-y-6">
+
+          <label class="block text-sm font-semibold text-gray-700 mb-2">
+            Your chosen payment method | 请选择付款方式的方向内行方:
+          </label>
+          <p class="px-3 py-2 border border-gray-300 rounded">{{paymentmethod}}</p>
+
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-2">
+              Card number / cheque number: | 如以卡或支票支付，请指定卡号/支票号码:
+            </label>
+            <p class="w-full px-3 py-2 border border-gray-300 rounded">{{cardorchequenumber}}</p>
+          </div>
+
+          <div class="grid grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-2">
+                Client Signature | 客戶签名
+              </label>
+              <img src="{{signature}}" alt="Client Signature"
+                class="w-full h-24 object-contain border border-gray-300 rounded" />
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-2">
+                Date | 日期
+              </label>
+              <p class="w-full px-3 py-2 border border-gray-300 rounded">{{ date }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</body>
+
+</html>

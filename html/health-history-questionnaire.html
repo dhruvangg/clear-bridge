@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health History Questionnaire</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="font-sans text-gray-700">
+    <div class="max-w-4xl mx-auto py-8 px-4">
+        <!-- Header -->
+        <div class="p-8 mb-8 border border-gray-300 rounded grid grid-cols-3 gap-4 items-center">
+            <div class="col-span-1  text-center md:text-left">
+                <img src="https://48724797.hs-sites.com/hs-fs/hubfs/CBH-PNG-web.png" alt="Company Logo"
+                    class="mx-auto md:mx-0 w-48">
+            </div>
+            <div class="col-span-2 text-center md:text-right text-gray-600">
+                <h1 class="text-3xl font-bold mb-2">Health History Questionnaire</h1>
+                <p class="font-semibold text-xs">All data will be kept strictly confidential and will become part of
+                    your medical record</p>
+            </div>
+        </div>
+
+        <form class="space-y-6" method="POST">
+
+            <div class="bg-white border border-gray-300 rounded">
+                <div class="bg-[#0080cb] text-white px-6 py-3 font-bold text-lg">
+                    Client Personal Information
+                </div>
+
+                <div class="p-6 space-y-6">
+                    <div class="grid grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                Legal Name
+                            </label>
+                            <p class="px-3 py-2 border border-gray-300 rounded">{{ surname }} {{ givename }}</p>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                Date of Birth *
+                            </label>
+                            <p class="w-full px-3 py-2 border border-gray-300 rounded">{{dateofbirth}}</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                Biological Gender *
+                            </label>
+                            <p class="w-full px-3 py-2 border border-gray-300 rounded">{{gender}}</p>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                Nationality
+                            </label>
+                            <p class="w-full px-3 py-2 border border-gray-300 rounded">{{nationality}}</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                Passport Number *
+                            </label>
+                            <p class="w-full px-3 py-2 border border-gray-300 rounded">{{passportnumber}}</p>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                Email Address *
+                            </label>
+                            <p class="w-full px-3 py-2 border border-gray-300 rounded">{{emailaddress}}</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                Contact Number (Mobile)*
+                            </label>
+                            <p class="w-full px-3 py-2 border border-gray-300 rounded">{{mobilephone}}</p>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                Contact Number (Home)
+                            </label>
+                            <p class="w-full px-3 py-2 border border-gray-300 rounded">{{hometelephone}}</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                Permanent Address in Singapore
+                            </label>
+                            <p class="w-full px-3 py-2 border border-gray-300 rounded">{{residentialaddress}}</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                Marital Status *
+                            </label>
+                            <p class="w-full px-3 py-2 border border-gray-300 rounded">{{maritalstatus}}</p>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                No. of Children
+                            </label>
+                            <p class="w-full px-3 py-2 border border-gray-300 rounded">{{noofchildren}}</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                Date of Last Health Screening
+                            </label>
+                            <p class="w-full px-3 py-2 border border-gray-300 rounded">{{dateoflasthealthscreening}}</p>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                Which Countries Have You Travelled to in the Last 3 Months?
+                            </label>
+                            <p class="w-full px-3 py-2 border border-gray-300 rounded">{{countriesvisitedlast3months}}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                Previous Abnormal Screening Results: (if any)
+                            </label>
+                            <p class="w-full px-3 py-2 border border-gray-300 rounded">
+                                {{previousabnormalscreeningresults}}</p>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                How did you hear about us?
+                            </label>
+                            <p class="w-full px-3 py-2 border border-gray-300 rounded">{{howdidyouhearaboutus}}</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                Do you agree to be contacted by email for the latest health news and updates from our
+                                medical center?
+                            </label>
+                            <p class="w-full px-3 py-2 border border-gray-300 rounded">{{ agreecontactbyemail }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white border border-gray-300 rounded">
+                <div class="bg-[#0080cb] text-white px-6 py-3 font-bold text-lg">
+                    Personal Health History
+                </div>
+
+                <div class="p-6 space-y-6">
+                    <div class="grid grid-cols-1">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                Childhood Illnesses
+                            </label>
+                            <p class="w-full px-3 py-2 border border-gray-300 rounded">{{ surname }}</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                Immunizations
+                            </label>
+                            <p class="w-full px-3 py-2 border border-gray-300 rounded">{{ surname }}</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                Past Medical History & Dates
+                            </label>
+                            <table class="w-full border-collapse mt-2">
+                                <thead>
+                                    <tr>
+                                        <th class="border px-3 py-2 bg-gray-100 text-sm font-semibold">Year </th>
+                                        <th class="border px-3 py-2 bg-gray-100 text-sm font-semibold">Operation Name
+                                        </th>
+                                        <th class="border px-3 py-2 bg-gray-100 text-sm font-semibold">Hospital</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="border px-3 py-2 text-sm"> {{ surgery_year_1 }} </td>
+                                        <td class="border px-3 py-2 text-sm"> {{ surgery_name_1 }} </td>
+                                        <td class="border px-3 py-2 text-sm"> {{ surgery_hospital_1 }} </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                Other hospitalizations
+                            </label>
+                            <table class="w-full border-collapse mt-2">
+                                <thead>
+                                    <tr>
+                                        <th class="border px-3 py-2 bg-gray-100 text-sm font-semibold">Year </th>
+                                        <th class="border px-3 py-2 bg-gray-100 text-sm font-semibold">Reason</th>
+                                        <th class="border px-3 py-2 bg-gray-100 text-sm font-semibold">Any On-going
+                                            Treatments </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="border px-3 py-2 text-sm"> {{ surgery_year_1 }} </td>
+                                        <td class="border px-3 py-2 text-sm"> {{ surgery_name_1 }} </td>
+                                        <td class="border px-3 py-2 text-sm"> {{ surgery_hospital_1 }} </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                Have you ever received a blood transfusion?
+                            </label>
+                            <p class="w-full px-3 py-2 border border-gray-300 rounded">{{ surname }}</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                Drug Current and History (including drugs, OTC drugs, supplements, inhalers, Vape,
+                                Smoking)
+                            </label>
+                            <table class="w-full border-collapse mt-2">
+                                <thead>
+                                    <tr>
+                                        <th class="border px-3 py-2 bg-gray-100 text-sm font-semibold">Drug Name</th>
+                                        <th class="border px-3 py-2 bg-gray-100 text-sm font-semibold">Dose</th>
+                                        <th class="border px-3 py-2 bg-gray-100 text-sm font-semibold">Frequency</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="border px-3 py-2 text-sm"> {{ dragname }} </td>
+                                        <td class="border px-3 py-2 text-sm"> {{ dose }} </td>
+                                        <td class="border px-3 py-2 text-sm"> {{ frequency }} </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                Allergies to medications
+                            </label>
+                            <table class="w-full border-collapse mt-2">
+                                <thead>
+                                    <tr>
+                                        <th class="border px-3 py-2 bg-gray-100 text-sm font-semibold">Drug Name</th>
+                                        <th class="border px-3 py-2 bg-gray-100 text-sm font-semibold">Reaction (e.g:
+                                            rash, shortness of breath, swollen face) </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="border px-3 py-2 text-sm"> {{ dragname }} </td>
+                                        <td class="border px-3 py-2 text-sm"> {{ reaction }} </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white border border-gray-300 rounded">
+                <div class="bg-[#0080cb] text-white px-6 py-3 font-bold text-lg">
+                    Personal Safety and Social Habits
+                </div>
+
+                <div class="p-6 space-y-6">
+                    <div class="grid grid-cols-1">
+                        <p class="block text-sm font-semibold text-gray-700 mb-2">
+                            Do you have frequent falls or fainting spells or episodes of fits (ellipses)? <span
+                                class="font-bold">Yes</span>
+                        </p>
+                        <p class="block text-sm font-semibold text-gray-700 mb-2">
+                            Do you have chronic vision or hearing loss? <span class="font-bold">No</span>
+                        </p>
+                        <p class="block text-sm font-semibold text-gray-700 mb-2">
+                            Are you on any tobacco products? Cigarettes, Cigars, Vape, E-cigarettes, etc. <span
+                                class="font-bold">Yes</span>
+                        </p>
+                        <p class="block text-sm font-semibold text-gray-700 mb-2">
+                            Are you on any drug-of-abuse products? K-PoP Vape, Heroin, etc <span
+                                class="font-bold">No</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white border border-gray-300 rounded">
+                <div class="bg-[#0080cb] text-white px-6 py-3 font-bold text-lg">
+                    Family History
+                </div>
+                <div class="p-6 space-y-6">
+                    <div class="grid grid-cols-1">
+                        <p class="block text-sm font-semibold text-gray-700 mb-2">High Cholesterol <span
+                                class="font-bold">Yes</span></p>
+                        <p class="block text-sm font-semibold text-gray-700 mb-2">Cardiovascular Disease <span
+                                class="font-bold">Yes</span></p>
+                        <p class="block text-sm font-semibold text-gray-700 mb-2">High Blood Pressure <span
+                                class="font-bold">Yes</span></p>
+                        <p class="block text-sm font-semibold text-gray-700 mb-2">Stroke <span
+                                class="font-bold">Yes</span></p>
+                        <p class="block text-sm font-semibold text-gray-700 mb-2">Breast Cancer <span
+                                class="font-bold">Yes</span></p>
+                        <p class="block text-sm font-semibold text-gray-700 mb-2">Ovarian Cancer <span
+                                class="font-bold">Yes</span></p>
+                        <p class="block text-sm font-semibold text-gray-700 mb-2">Cancers If yes, please specify:
+                            <span class="font-bold">Yes</span>
+                        </p>
+                        <p class="block text-sm font-semibold text-gray-700 mb-2">Mental Health Problems (e.g:
+                            depression, anxiety disorders…) <span class="font-bold">Yes</span></p>
+                        <p class="block text-sm font-semibold text-gray-700 mb-2">Glaucoma <span
+                                class="font-bold">Yes</span></p>
+                        <p class="block text-sm font-semibold text-gray-700 mb-2">Blood clots (e.g.: embolism) <span
+                                class="font-bold">Yes</span></p>
+                        <p class="block text-sm font-semibold text-gray-700 mb-2">Asthma <span
+                                class="font-bold">Yes</span></p>
+                        <p class="block text-sm font-semibold text-gray-700 mb-2">Diabetes <span
+                                class="font-bold">Yes</span></p>
+                        <p class="block text-sm font-semibold text-gray-700 mb-2">Arthritis and autoimmune diseases
+                            (e.g.: SLE - Systemic lupus erythematosus) <span class="font-bold">Yes</span></p>
+                        <p class="block text-sm font-semibold text-gray-700 mb-2">Others: <span
+                                class="font-bold">Yes</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white border border-gray-300 rounded">
+                <div class="bg-[#0080cb] text-white px-6 py-3 font-bold text-lg">
+                    Health Declarations
+                </div>
+                <div class="p-6 space-y-6">
+                    <div class="grid grid-cols-1">
+                        <!-- Last 5 days -->
+                        <p class="block text-sm font-semibold text-gray-700 mb-2">For the last 5 days and today, are
+                            you feeling healthy and generally well? <span class="font-bold">Yes</span></p>
+                        <p class="block text-sm font-semibold text-gray-700 mb-2">Have a cold, flu, cough, sore
+                            throat, diarrhea or any infection in the last 4 weeks? <span class="font-bold">Yes</span>
+                        </p>
+                        <p class="block text-sm font-semibold text-gray-700 mb-2">Have a fever in the last 4 weeks?
+                            <span class="font-bold">Yes</span>
+                        </p>
+                        <p class="block text-sm font-semibold text-gray-700 mb-2">Have viral infection or prolonged
+                            contact with others with viral infection (e.g. dengue, chikungunya, zika, chickenpox,
+                            measles, Covid-19, rubella, hand foot & mouth disease, hepatitis)? <span
+                                class="font-bold">Yes</span></p>
+                        <p class="block text-sm font-semibold text-gray-700 mb-2">Have a needle-stick injury that
+                            exposed you to someone else’s blood, or did you get a tattoo, body piercing, or acupuncture?
+                            <span class="font-bold">Yes</span>
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-1">
+                        <p class="block text-sm font-semibold text-gray-700 mb-2">Received a blood transfusion or
+                            plasma-derived products? <span class="font-bold">Yes</span></p>
+                        <p class="block text-sm font-semibold text-gray-700 mb-2">Had heart, lung, or chronic kidney
+                            disease? <span class="font-bold">Yes</span></p>
+                        <p class="block text-sm font-semibold text-gray-700 mb-2">Had hepatitis or liver disease?
+                            <span class="font-bold">Yes</span>
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-1">
+                        <p class="block text-sm font-semibold text-gray-700 mb-2">Had any form of cancer (please
+                            state conditions)? <span class="font-bold">Yes</span></p>
+                        <p class="block text-sm font-semibold text-gray-700 mb-2">Had any blood disorder (e.g. G6PD,
+                            thalassemia)? <span class="font-bold">Yes</span></p>
+                        <p class="block text-sm font-semibold text-gray-700 mb-2">Had autoimmune diseases? <span
+                                class="font-bold">Yes</span></p>
+                        <p class="block text-sm font-semibold text-gray-700 mb-2">Had malaria, babesiosis, or
+                            chagas? <span class="font-bold">Yes</span></p>
+                        <p class="block text-sm font-semibold text-gray-700 mb-2">Received blood transfusion in UK,
+                            Ireland, Mexico, Central or South America? <span class="font-bold">Yes</span></p>
+                        <p class="block text-sm font-semibold text-gray-700 mb-2">Diagnosed with vCJD, CJD, or
+                            familial prion disease (similar to mad cow disease)? <span class="font-bold">Yes</span></p>
+                        <p class="block text-sm font-semibold text-gray-700 mb-2">Had HIV or sexually transmitted
+                            diseases? <span class="font-bold">Yes</span></p>
+                        <p class="block text-sm font-semibold text-gray-700 mb-2">Rejected for blood donation or had
+                            blood donation discarded? <span class="font-bold">Yes</span></p>
+
+                        <!-- Other health issues -->
+                        <p class="block text-sm font-semibold text-gray-700 mb-2">Other important health issues to
+                            declare: <span class="font-bold">Please specify</span></p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-6">
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">
+                        Client Signature
+                    </label>
+                    <img src="{{signature}}" alt="Client Signature"
+                        class="w-full h-24 object-contain border border-gray-300 rounded" />
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">
+                        Date
+                    </label>
+                    <p class="w-full px-3 py-2 border border-gray-300 rounded">{{ date }}</p>
+                </div>
+            </div>
+
+
+            <div class="bg-gray-50 border-t-4 p-6 mt-8">
+                <p class="text-xs text-gray-600 text-center">
+                    Copyright © by ClearBridge. The information contained in this document is the property of ClearBridge. Unauthorized use or disclosure is prohibited.
+                </p>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
